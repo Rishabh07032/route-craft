@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const axios = require("axios");
 process.on("uncaughtException", (err) => {
-  console.error("UNCAUGHT ERROR:", err);
+  console.error("UNCAUGHT ERROR:", err);w
 });
 
 process.on("unhandledRejection", (err) => {
