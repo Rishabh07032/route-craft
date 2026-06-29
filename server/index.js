@@ -31,6 +31,9 @@ mongoose
   });
 
 app.use(cors());
+app.use(cors({ origin: 'https://routecraft-air.onrender.com',
+  credentials:true
+ }));
 app.use(express.json());
 console.log("API KEY:", process.env.GEMINI_API_KEY?.slice(0, 10));
 

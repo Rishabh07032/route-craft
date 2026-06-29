@@ -22,6 +22,7 @@ function ChatAssistant() {
   "❤️ Honeymoon Places",
   "🎒 Packing Tips",
 ];
+
 const sendMessage = async (customMessage = null) => {
   const finalMessage = customMessage || message;
 
