@@ -20,7 +20,7 @@ const [password, setPassword] = useState("");
 const handleSignup = async () => {
   try {
     const response = await axios.post(
-      "http://localhost:5000/signup",
+      "https://route-craft-10.onrender.com/signup",
       {
         name,
         email,
@@ -39,7 +39,7 @@ const handleSignup = async () => {
 const handleLogin = async () => {
   try {
     const response = await axios.post(
-      "http://localhost:5000/login",
+      "https://route-craft-10.onrender.com/login",
       {
         email,
         password,
