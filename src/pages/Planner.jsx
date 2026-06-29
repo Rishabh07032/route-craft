@@ -50,7 +50,7 @@ const handleGeneratePlan = async () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:5000/generate-trip",
+        "https://route-craft-10.onrender.com/generate-trip",
         tripData
       );
 

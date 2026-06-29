@@ -88,7 +88,7 @@ const discoverPlaces = async () => {
     setLoading(true);
 
     const response = await axios.post(
-      "http://localhost:5000/recommended-destinations",
+      "https://route-craft-10.onrender.com/recommended-destinations",
       {
         destination: lastDestination,
       }

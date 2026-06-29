@@ -44,7 +44,7 @@ if (!finalMessage.trim()) return;
   try {
 
     const response = await axios.post(
-      "http://localhost:5000/chat-assistant",
+      "https://route-craft-10.onrender.com/chat-assistant",
       {
         message: finalMessage,
       }

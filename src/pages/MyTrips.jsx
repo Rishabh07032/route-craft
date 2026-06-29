@@ -30,7 +30,7 @@ const totalDays = trips.reduce((sum, trip) => sum + Number(trip.days), 0);
   const fetchTrips = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/my-trips"
+        "https://route-craft-10.onrender.com/my-trips"
       );
 
       setTrips(response.data);
@@ -43,7 +43,7 @@ const totalDays = trips.reduce((sum, trip) => sum + Number(trip.days), 0);
   const deleteTrip = async (id) => {
   try {
     await axios.delete(
-      `http://localhost:5000/delete-trip/${id}`
+      `https://route-craft-10.onrender.com/delete-trip/${id}`
     );
 
     fetchTrips();
