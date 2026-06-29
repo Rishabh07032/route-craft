@@ -48,6 +48,8 @@ function Navbar() {
 </button>
 
  <div className="hidden md:flex items-center gap-8 font-medium text-white">
+        </div>
+
         
         <Link
           to="/"
@@ -202,7 +204,6 @@ dur ation-300          "
   </div>
 )}
 
-      </div>
 
 
     </nav>
