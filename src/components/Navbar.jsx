@@ -24,6 +24,7 @@ function Navbar() {
 
       
       <div className="hidden md:flex items-center gap-8 font-medium text-white">
+        </div>
         
         {/* Mobile Menu Button */}
 
@@ -190,7 +191,7 @@ duration-300"
 hover:bg-cyan-500/20
 hover:pl-10
 transition-all
-duration-300          "
+dur ation-300          "
         >
           Login
         </Link>
@@ -200,7 +201,7 @@ duration-300          "
   </div>
 )}
 
-      </div>
+      
 
 
     </nav>
