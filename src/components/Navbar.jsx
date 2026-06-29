@@ -23,8 +23,7 @@ function Navbar() {
 </h1>
 
       
-      <div className="hidden md:flex items-center gap-8 font-medium text-white">
-        </div>
+     
         
         {/* Mobile Menu Button */}
 
@@ -48,6 +47,8 @@ function Navbar() {
   </div>
 </button>
 
+ <div className="hidden md:flex items-center gap-8 font-medium text-white">
+        
         <Link
           to="/"
           className="cursor-pointer hover:text-cyan-400 hover:scale-105 transition-all duration-300"
@@ -201,7 +202,7 @@ dur ation-300          "
   </div>
 )}
 
-      
+      </div>
 
 
     </nav>
