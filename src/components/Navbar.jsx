@@ -55,7 +55,7 @@ function Navbar() {
             <button
               onClick={() => {
                 localStorage.removeItem("token");
-                window.location.href = "/login";
+                window.location.href = "/";
               }}
               className="px-5 py-2 rounded-lg bg-red-500 hover:bg-red-600 hover:scale-105 transition-all duration-300 text-white"
             >
