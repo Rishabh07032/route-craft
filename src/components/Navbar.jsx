@@ -24,6 +24,7 @@ function Navbar() {
 
       
       <div className="hidden md:flex items-center gap-8 font-medium text-white">
+        
         {/* Mobile Menu Button */}
 
 <button
@@ -92,9 +93,7 @@ function Navbar() {
           </Link>
         )}
 
-      </div>
-
-{menuOpen && (
+        {menuOpen && (
  <div
   className={`
     absolute
@@ -200,6 +199,10 @@ duration-300          "
     </div>
   </div>
 )}
+
+      </div>
+
+
     </nav>
   );
 }
