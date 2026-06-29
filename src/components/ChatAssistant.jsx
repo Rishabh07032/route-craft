@@ -92,10 +92,12 @@ const [loading, setLoading] = useState(false);
     onClick={() => setOpen(true)}
     className="
       fixed
-      bottom-8
-      right-8
-      w-16
-      h-16
+      bottom-3 md:bottom-8
+      right-3 md:right-8
+      w-14
+h-14
+md:w-16
+md:h-16
       rounded-full
       bg-cyan-500
       hover:bg-cyan-400
@@ -108,7 +110,7 @@ const [loading, setLoading] = useState(false);
       transition-all
     "
   >
-    <MessageCircle size={30} />
+    <MessageCircle size={24} className="md:w-8 md:h-8" />
   </button>
 )}
 
@@ -117,11 +119,12 @@ const [loading, setLoading] = useState(false);
           className="
           fixed
           bottom-2
-          right-8
-          w-[380px]
-          h-[650px]
+md:bottom-6
+          right-3 md:right-8
+          w-[95vw] max-w-[380px]
+          h-[80vh] md:h-[650px]
           bg-[#08101d]
-          rounded-3xl
+          rounded-2xl md:rounded-3xl
           border
           border-cyan-500/20
           shadow-2xl
@@ -133,15 +136,15 @@ const [loading, setLoading] = useState(false);
         >
           {/* Header */}
 
-          <div className="bg-cyan-500 p-5 flex justify-between items-center">
+          <div className="bg-cyan-500 p-3 md:p-5 flex justify-between items-center">
 
             <div>
 
-              <h2 className="text-xl font-bold text-white">
+              <h2 className="text-lg md:text-xl font-bold text-white">
                 🤖 RouteCraft AI
               </h2>
 
-              <p className="text-sm text-white/80">
+              <p className="text-xs md:text-xs md:text-sm text-white/80">
                 Travel Assistant
               </p>
 
@@ -181,7 +184,7 @@ const [loading, setLoading] = useState(false);
 
 {/* Chat */}
 
-<div className="flex-1 p-5 overflow-y-auto">
+<div className="flex-1 p-3 md:p-5 overflow-y-auto">
 
   {messages.map((msg, index) => (
     
@@ -195,7 +198,7 @@ const [loading, setLoading] = useState(false);
       }`}
     >
       <div
-        className={`max-w-[80%] rounded-2xl p-4 whitespace-pre-wrap ${
+        className={`max-w-[90%] md:max-w-[80%] rounded-2xl p-3 md:p-4 whitespace-pre-wrap ${
           msg.role === "user"
             ? "bg-cyan-500 text-white"
             : "bg-white/10 text-white"
@@ -244,9 +247,9 @@ const [loading, setLoading] = useState(false);
       key={index}
       onClick={() => sendMessage(item)}
       className="
-      text-sm
-      px-4
-      py-2
+      text-xs md:text-sm
+px-3 md:px-4
+py-2
       rounded-full
       bg-white/10
       hover:bg-cyan-500
@@ -262,7 +265,7 @@ const [loading, setLoading] = useState(false);
 
 )}
 
-          <div className="p-4 border-t border-white/10">
+          <div className="p-3 md:p-4 border-t border-white/10">
 
             <input
 value={message}
@@ -277,13 +280,13 @@ onKeyDown={(e)=>{
   w-full
   bg-white/10
   rounded-xl
-  p-4
+  p-3 md:p-4
   text-white
   outline-none
   "
 />
           <button
-onClick={sendMessage}
+onClick={() => sendMessage()}
 disabled={loading}
 className="
 mt-3

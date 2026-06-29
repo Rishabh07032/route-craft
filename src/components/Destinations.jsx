@@ -28,7 +28,7 @@ function Destinations() {
       {/* Background Glow */}
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-cyan-500/10 blur-[180px] rounded-full"></div>
 
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
         <div className="text-center">
@@ -37,14 +37,14 @@ function Destinations() {
             EXPLORE INDIA
           </p>
 
-          <h2 className="mt-5 text-5xl md:text-6xl font-black text-white">
+          <h2 className="mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white">
             Discover Extraordinary
             <span className="block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
               Destinations
             </span>
           </h2>
 
-          <p className="mt-8 max-w-3xl mx-auto text-lg text-gray-400 leading-8">
+          <p className="mt-6 max-w-3xl mx-auto text-base sm:text-lg text-gray-400 leading-7 sm:leading-8 px-2">
             From the snow-covered Himalayas to tropical beaches and hidden
             valleys, explore India's most breathtaking destinations with
             RouteCraft.
@@ -53,7 +53,7 @@ function Destinations() {
         </div>
 
         {/* Cards */}
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10 mt-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 mt-12 md:mt-20">
 
           {destinations.map((place, index) => (
             <DestinationCard

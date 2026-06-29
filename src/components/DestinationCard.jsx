@@ -10,10 +10,14 @@ className="
 group
 relative
 overflow-hidden
+h-[420px]
+sm:h-[460px]
+lg:h-[520px]
 rounded-3xl
 bg-white/5
 backdrop-blur-xl
-border border-white/10
+border
+border-white/10
 shadow-xl
 transition-all
 duration-500
@@ -39,22 +43,22 @@ hover:shadow-cyan-500/20
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
 
       {/* Rating */}
-      <div className="absolute top-5 right-5 bg-white/15 backdrop-blur-xl px-4 py-2 rounded-full text-white font-semibold border border-white/20">
+      <div className="absolute top-4 right-4 md:top-5 md:right-5 bg-white/15 backdrop-blur-xl px-3 py-1.5 md:px-4 md:py-2 rounded-full text-white font-semibold border border-white/20">
         ⭐ {rating}
       </div>
 
       {/* Bottom Content */}
-      <div className="absolute bottom-0 left-0 w-full p-7">
+      <div className="absolute bottom-0 left-0 w-full p-5 md:p-7">
 
         <p className="text-cyan-300 text-sm mb-2 tracking-widest uppercase">
           {location}
         </p>
 
-        <h3 className="text-4xl font-black text-white">
+        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">
           {name}
         </h3>
 
-        <p className="text-gray-300 mt-3 leading-7">
+        <p className="text-gray-300 mt-3 text-sm md:text-base leading-6 md:leading-7">
           Discover breathtaking landscapes, local culture,
           unforgettable experiences and luxury stays.
         </p>
@@ -62,8 +66,9 @@ hover:shadow-cyan-500/20
         <button
           className="
           mt-7
-          px-7
-          py-3
+          px-5 md:px-7
+          py-2.5 md:py-3
+          text-sm md:text-base
           rounded-full
           bg-white/10
           backdrop-blur-xl

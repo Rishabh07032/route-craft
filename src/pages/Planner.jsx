@@ -36,7 +36,7 @@ useEffect(() => {
 
 const handleGeneratePlan = async () => {
     if (!destination || !budget || !days) {
-      alert("Please fill all fields");
+      toast.error("Please fill all fields");
       return;
     }
 
@@ -72,7 +72,7 @@ setCurrentImage(0);  setWeather(response.data.weather);
 }
         setLoading(false);
       } else {
-        alert("No itinerary received from backend");
+        toast.error("No itinerary received from backend");
       }
     } catch (error) {
       console.error("API Error:", error);
@@ -82,7 +82,7 @@ setCurrentImage(0);  setWeather(response.data.weather);
       }
       setLoading(false);
 
-      alert("Error generating trip plan");
+      toast.error("Error generating trip plan");
     }
   };
  const downloadPDF = () => {
@@ -122,24 +122,21 @@ setCurrentImage(0);  setWeather(response.data.weather);
   return (
     
     <div
-      className="
-      min-h-screen
-      pt-32
-      pb-20
-      px-6
-      bg-cover
-      bg-center
-      "
-      
-      style={{
-        
-        backgroundImage: `url(${heroBg})`,
-      }}
-      style={{
-  backgroundImage: `url(${heroBg})`,
-  filter: "brightness(1.0)",
-}}
-    >
+  className="
+  min-h-screen
+  pt-24
+  md:pt-32
+  pb-16
+  md:pb-20
+  px-4
+  md:px-8
+  bg-cover
+  bg-center
+  "
+  style={{
+    backgroundImage: `url(${heroBg})`,
+  }}
+>
 
       
       <button
@@ -164,8 +161,8 @@ setCurrentImage(0);  setWeather(response.data.weather);
   <ArrowLeft size={20} />
   Back
 </button>
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-5xl font-bold text-center mb-10 text-white">
+      <div className="w-full max-w-4xl mx-auto">
+        <h1 className="text-3xl sm:text-2xl sm:text-3xl md:text-4xl md:text-5xl font-bold text-center mb-10 text-white">
           AI Trip Planner
         </h1>
 
@@ -177,10 +174,10 @@ setCurrentImage(0);  setWeather(response.data.weather);
           border-white/20
           rounded-3xl
           shadow-2xl
-          p-8
+          p-5 md:p-8
           "
         >
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <input
               type="text"
               placeholder="Destination"
@@ -285,7 +282,7 @@ bg-white
 rounded-[32px]
 border border-gray-200
 shadow-2xl
-p-10
+p-5 md:p-10
 overflow-hidden
 "
   >
@@ -380,7 +377,7 @@ overflow-hidden
       alt={destination}
       className="
       w-full
-      h-96
+      h-60 sm:h-72 md:h-96
       object-cover
       rounded-2xl
       shadow-lg
@@ -412,7 +409,7 @@ overflow-hidden
   <button
     onClick={downloadPDF}
     className="
-    px-6
+    px-4 md:px-8
     py-3
     rounded-xl
     bg-red-600
@@ -428,7 +425,7 @@ overflow-hidden
 
   <button
     className="
-    px-6
+    px-4 md:px-8
     py-3
     rounded-xl
     bg-cyan-500

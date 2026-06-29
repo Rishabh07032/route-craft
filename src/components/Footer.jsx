@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="bg-[#050816] border-t border-white/10 mt-20">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
 
-        <div className="grid md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
           {/* Brand */}
           <div>
-            <h2 className="text-3xl font-black text-white">
+            <h2 className="text-2xl md:text-3xl font-black text-white">
               Route<span className="text-cyan-400">Craft</span>
             </h2>
 
-            <p className="text-gray-400 mt-5 leading-7">
+            <p className="text-gray-400 mt-5 text-sm md:text-base leading-6 md:leading-7">
               AI-powered travel planning for unforgettable journeys across India.
             </p>
           </div>
@@ -81,24 +81,24 @@ function Footer() {
             </p>
 
             <p className="text-gray-400 mt-3">
-              ✉ routecraft.ai@gmail.com
+              ✉ rishabhsinghjjhy77@gmail.com
             </p>
 
             <p className="text-gray-400 mt-3">
-              📞 +91 XXXXX XXXXX
+              📞 +91 83404 93941
             </p>
 
           </div>
 
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-white/10 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-3">
 
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-xs md:text-sm">
             © 2026 RouteCraft. All rights reserved.
           </p>
 
-          <p className="text-gray-500 text-sm mt-3 md:mt-0">
+          <p className="text-gray-500 text-xs md:text-sm mt-3 md:mt-0">
             Designed & Developed by ❤️ Rishabh Singh
           </p>
 

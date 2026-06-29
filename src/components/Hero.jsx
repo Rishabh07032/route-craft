@@ -10,7 +10,11 @@ function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4">
-      <h1 className="text-6xl md:text-8xl lg:text-9xl font-black leading-[0.9] tracking-[-0.04em] drop-shadow-[0_10px_30px_rgba(0,0,0,0.45)]">
+      <h1 className="text-5xl
+sm:text-6xl
+md:text-7xl
+lg:text-8xl
+xl:text-9xl font-black leading-[0.9] tracking-[-0.04em] drop-shadow-[0_10px_30px_rgba(0,0,0,0.45)]">
   <span className="text-white">Explore</span>
 
   <br />

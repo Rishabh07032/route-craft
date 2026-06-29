@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -54,7 +55,7 @@ const totalDays = trips.reduce((sum, trip) => sum + Number(trip.days), 0);
 };
 
   return (
-    <div className="min-h-screen bg-black text-white pt-32 px-10">
+    <div className="min-h-screen bg-black text-white pt-24 md:pt-32 px-4 sm:px-6 lg:px-10">
       <button
   onClick={() => navigate(-1)}
   className="
@@ -80,35 +81,35 @@ const totalDays = trips.reduce((sum, trip) => sum + Number(trip.days), 0);
 
      <div className="mb-12">
 
-  <h1 className="text-5xl font-black">
+  <h1 className="text-2xl md:text-2xl md:text-3xl sm:text-4xl md:text-5xl font-black">
     My Trips
   </h1>
 
-  <p className="text-slate-400 mt-3 text-lg">
+  <p className="text-slate-400 mt-3 text-base md:text-lg">
     View and manage all your AI-generated travel plans.
   </p>
 
 </div>
-<div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-12">
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
 
-  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-xl">
+  <div className="bg-white/5 border border-white/10 rounded-2xl p-4 md:p-6 backdrop-blur-xl">
     <p className="text-slate-400 text-sm">Total Trips</p>
-    <h2 className="text-3xl font-black mt-2">🧳 {totalTrips}</h2>
+    <h2 className="text-2xl md:text-3xl font-black mt-2">🧳 {totalTrips}</h2>
   </div>
 
-  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-xl">
+  <div className="bg-white/5 border border-white/10 rounded-2xl p-4 md:p-6 backdrop-blur-xl">
     <p className="text-slate-400 text-sm">Average Budget</p>
-    <h2 className="text-3xl font-black mt-2">💰 ₹{averageBudget}</h2>
+    <h2 className="text-2xl md:text-3xl font-black mt-2">💰 ₹{averageBudget}</h2>
   </div>
 
-  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-xl">
+  <div className="bg-white/5 border border-white/10 rounded-2xl p-4 md:p-6 backdrop-blur-xl">
     <p className="text-slate-400 text-sm">Total Days</p>
-    <h2 className="text-3xl font-black mt-2">📅 {totalDays}</h2>
+    <h2 className="text-2xl md:text-3xl font-black mt-2">📅 {totalDays}</h2>
   </div>
 
-  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-xl">
+  <div className="bg-white/5 border border-white/10 rounded-2xl p-4 md:p-6 backdrop-blur-xl">
     <p className="text-slate-400 text-sm">Travel Plans</p>
-    <h2 className="text-3xl font-black mt-2">🌍 {totalTrips}</h2>
+    <h2 className="text-2xl md:text-3xl font-black mt-2">🌍 {totalTrips}</h2>
   </div>
   <div className="mb-10">
   <input
@@ -122,8 +123,7 @@ const totalDays = trips.reduce((sum, trip) => sum + Number(trip.days), 0);
       border
       border-white/10
       rounded-2xl
-      px-6
-      py-4
+      px-4 md:px-6 py-3 md:py-4
       text-white
       placeholder:text-slate-400
       focus:outline-none
@@ -139,8 +139,7 @@ const totalDays = trips.reduce((sum, trip) => sum + Number(trip.days), 0);
       key={type}
       onClick={() => setFilter(type)}
       className={`
-        px-5
-        py-2
+        px-4 md:px-5 py-2 text-sm md:text-base
         rounded-full
         transition
         ${
@@ -197,7 +196,7 @@ const totalDays = trips.reduce((sum, trip) => sum + Number(trip.days), 0);
     🧳
   </div>
 
-  <h2 className="text-3xl font-bold mt-6">
+  <h2 className="text-2xl md:text-3xl font-bold mt-6">
     No Trips Yet
   </h2>
 
@@ -247,7 +246,7 @@ backdrop-blur-xl
 border
 border-white/10
 rounded-3xl
-p-6
+p-4 md:p-6
 mb-5
 transition-all
 duration-300
@@ -258,7 +257,7 @@ hover:shadow-2xl
           >
            <div className="mb-6">
 
-  <h2 className="text-3xl font-black text-white">
+  <h2 className="text-2xl md:text-3xl font-black text-white">
     {trip.destination}
   </h2>
 
@@ -268,7 +267,7 @@ hover:shadow-2xl
 
 </div>
 
-           <div className="grid md:grid-cols-3 gap-4 mt-6">
+           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 gap-4 mt-6">
 
   <div className="bg-white/5 rounded-xl p-4">
     <p className="text-slate-400 text-sm">Budget</p>
@@ -299,11 +298,12 @@ hover:shadow-2xl
     📅 Created on {new Date(trip.createdAt).toLocaleDateString()}
   </p>
 
-  <div className="flex gap-3">
+  <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
 
     <button
   onClick={() => setSelectedTrip(trip)}
   className="
+  w-full sm:w-auto
   px-6
   py-3
   rounded-xl
@@ -321,6 +321,7 @@ hover:shadow-2xl
     <button
   onClick={() => deleteTrip(trip._id)}
   className="
+  w-full sm:w-auto
   px-6
   py-3
   rounded-xl
@@ -351,7 +352,7 @@ hover:shadow-2xl
     items-center
     justify-center
     z-50
-    p-6
+    p-4 md:p-6
     "
   >
     <div
@@ -362,7 +363,7 @@ hover:shadow-2xl
       max-w-6xl
       max-h-[95vh]
       overflow-y-auto
-      p-10
+      p-5 md:p-10
       relative
       "
     >
@@ -370,8 +371,7 @@ hover:shadow-2xl
         onClick={() => setSelectedTrip(null)}
         className="
 absolute
-top-6
-right-6
+top-3 right-3 md:top-6 md:right-6
 w-12
 h-12
 rounded-full
@@ -388,7 +388,7 @@ font-bold
 
       <div className="flex items-center justify-between mb-6">
 
-  <h2 className="text-4xl font-black text-black">
+  <h2 className="text-2xl md:text-4xl font-black text-black">
     📍 {selectedTrip.destination}
   </h2>
 
@@ -422,10 +422,11 @@ font-bold
 <button
   onClick={() => {
     navigator.clipboard.writeText(selectedTrip.itinerary);
-    alert("Itinerary copied successfully!");
+    toast.success("Itinerary copied successfully!");
   }}
   className="
-  ml-3
+  w-full sm:w-auto
+  mt-3 sm:mt-0 sm:ml-3
   inline-flex
   items-center
   gap-2
@@ -445,6 +446,7 @@ font-bold
       <div className="prose max-w-none">
         <div
   className="
+  w-full sm:w-auto
   prose
   prose-lg
   max-w-none
@@ -453,8 +455,8 @@ font-bold
   prose-headings:text-cyan-600
   prose-headings:font-bold
 
-  prose-h1:text-4xl
-  prose-h2:text-3xl
+  prose-h1:text-2xl md:text-4xl
+  prose-h2:text-2xl md:text-2xl md:text-3xl
   prose-h3:text-2xl
 
   prose-p:leading-8
@@ -471,8 +473,8 @@ font-bold
   max-w-none
   prose-headings:text-cyan-600
   prose-headings:font-bold
-  prose-h1:text-4xl
-  prose-h2:text-3xl
+  prose-h1:text-2xl md:text-4xl
+  prose-h2:text-2xl md:text-2xl md:text-3xl
   prose-h3:text-2xl
   prose-p:text-gray-700
   prose-p:leading-8
@@ -480,9 +482,6 @@ font-bold
   prose-ul:pl-5
   "
 >
-  <ReactMarkdown>
-    {selectedTrip.itinerary}
-  </ReactMarkdown>
 </div>
   <ReactMarkdown>
     {selectedTrip.itinerary}

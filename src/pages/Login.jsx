@@ -65,7 +65,7 @@ navigate("/", { replace: true });}, 1500);
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center flex items-center justify-center px-6"
+      className="min-h-screen bg-cover bg-center flex items-center justify-center px-4 md:px-6"
       style={{
         backgroundImage: `url(${heroBg})`,
       }}
