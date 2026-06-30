@@ -50,9 +50,14 @@ const handleGeneratePlan = async () => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "https://route-craft-10.onrender.com/generate-trip",
-        tripData
-      );
+  "https://route-craft-10.onrender.com/generate-trip",
+  data,
+  {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  }
+);
 
       console.log("API Response:", response.data);
 

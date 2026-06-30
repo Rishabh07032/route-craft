@@ -4,6 +4,7 @@ const Trip = require("./models/Trip");
 const User = require("./models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const auth = require("./middleware/auth");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const axios = require("axios");
@@ -237,7 +238,15 @@ try {
   console.log("Unsplash image fetch failed");
 }
 
+const token = req.headers.authorization?.split(" ")[1];
+
+const decoded = jwt.verify(
+  token,
+  "rishabh_secret_key"
+);
+
 const trip = new Trip({
+  userId: decoded.id,
   destination,
   budget,
   days,
@@ -511,12 +520,13 @@ app.post("/login", async (req, res) => {
 });
 console.log("INDEX FILE LOADED");
 const PORT = 5000;
-app.get("/my-trips", async (req, res) => {
+app.get("/my-trips", auth, async (req, res) => {
   try {
-    const trips = await Trip.find().sort({
-      createdAt: -1,
-    });
-
+    const trips = await Trip.find({
+  userId: req.user.id,
+}).sort({
+  createdAt: -1,
+});
     res.json(trips);
 
   } catch (error) {
@@ -532,9 +542,12 @@ app.get("/abc123", (req, res) => {
 app.get("/test-delete", (req, res) => {
   res.send("TEST DELETE WORKING");
 });
-app.delete("/delete-trip/:id", async (req, res) => {
+app.delete("/delete-trip/:id", auth, async (req, res) => {
   try {
-    await Trip.findByIdAndDelete(req.params.id);
+   await Trip.findOneAndDelete({
+  _id: req.params.id,
+  userId: req.user.id,
+});
     // console.log(req.params);
     
 
